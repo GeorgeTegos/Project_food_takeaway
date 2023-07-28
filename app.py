@@ -11,8 +11,10 @@ app.cli.add_command(seed)
 
 from controllers.item_controller import item_blueprint
 from controllers.order_controller import order_blueprint
+from controllers.order_item_controller import order_item_blueprint
 app.register_blueprint(item_blueprint)
 app.register_blueprint(order_blueprint)
+app.register_blueprint(order_item_blueprint)
 
 @app.route('/')
 def index():

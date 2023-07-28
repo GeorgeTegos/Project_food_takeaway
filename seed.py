@@ -1,5 +1,7 @@
 from app import db
-from models import Order,Item
+from models.Item import Item
+from models.Order import Order
+from models.Order_item import Order_Item
 import click
 
 from flask.cli import with_appcontext

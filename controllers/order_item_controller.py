@@ -5,5 +5,5 @@ from models.Order import Order
 from models.Order_item  import Order_Item
 
 
-item_blueprint=Blueprint("item",__name__)
+order_item_blueprint=Blueprint("order_item",__name__)
 
