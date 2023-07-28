@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 6c3d628d301e
-Revises: c40d3718e532
-Create Date: 2023-07-28 12:02:31.269077
+Revision ID: 2154974d4250
+Revises: 
+Create Date: 2023-07-28 13:09:49.700844
 
 """
 from alembic import op
@@ -10,8 +10,8 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '6c3d628d301e'
-down_revision = 'c40d3718e532'
+revision = '2154974d4250'
+down_revision = None
 branch_labels = None
 depends_on = None
 
@@ -21,7 +21,7 @@ def upgrade():
     with op.batch_alter_table('order', schema=None) as batch_op:
         batch_op.alter_column('order_delivered',
                existing_type=sa.BOOLEAN(),
-               nullable=True)
+               nullable=False)
 
     # ### end Alembic commands ###
 
@@ -31,6 +31,6 @@ def downgrade():
     with op.batch_alter_table('order', schema=None) as batch_op:
         batch_op.alter_column('order_delivered',
                existing_type=sa.BOOLEAN(),
-               nullable=False)
+               nullable=True)
 
     # ### end Alembic commands ###
