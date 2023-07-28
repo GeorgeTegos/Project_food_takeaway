@@ -6,5 +6,5 @@ class Order(db.Model):
     customer_name = db.Column(db.String(64))
     customer_phone = db.Column(db.Double)
     customer_address = db.Column(db.String(64))
-    order_delivered = db.Column(db.Boolean) # MAKE DEFAULT FALSE !
+    order_delivered = db.Column(db.Boolean,nullable=False, server_default="false") # MAKE DEFAULT FALSE !
     order_item = db.relationship("Order_item", backref="order")
