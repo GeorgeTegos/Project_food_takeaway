@@ -18,4 +18,4 @@ app.register_blueprint(order_item_blueprint)
 
 @app.route('/')
 def index():
-    return render_template('/index.jinja')
+    return render_template('index.jinja')

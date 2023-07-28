@@ -45,7 +45,8 @@
     /* border: 1px black solid; */
     min-height: 80vh;
     width: 92.5%;
-    display: flex;
+    display: flex;  
+    flex-flow: column wrap;
     justify-content: center;
     align-items: center;
     border-top-right-radius: 0;

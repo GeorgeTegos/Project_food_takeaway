@@ -1,0 +1,10 @@
+{% extends 'base.jinja' %}
+{% block content %}
+    This is /orders route
+
+    <ul>
+    {% for order in orders  %}
+        <li>{{ order.customer_name }} , {{ order.customer_phone }}, {{ order.customer_address }}</li>
+    {% endfor %}
+    </ul>
+{% endblock content %}
