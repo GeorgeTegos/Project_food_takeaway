@@ -1,0 +1,61 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.test{
+    background-color: bisque;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1000px;
+    margin: 0 3rem;
+}
+
+/* Header Area ##############################-- HEADER Area-- */
+.header{
+    background-color: lightblue;
+    height: 3rem;
+    border-bottom-left-radius: 40%;
+    border-bottom-right-radius: 40%;
+    display: flex;
+}
+
+.logo {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.nav__menu{
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    gap:30px;
+}
+
+
+/* Content Area ############################-- CONTENT AREA */
+.content__wrapper{
+    margin-top: -10px;
+    /* border: 1px black solid; */
+    min-height: 80vh;
+    width: 92.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: 0;
+}
+
+
+/* Footer Area #############################-- FOOTER AREA */
+.footer{
+    background-color: lightblue;
+    border-top-left-radius: 40%;
+    border-top-right-radius: 40%;
+    height: 3rem;
+}

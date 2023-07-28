@@ -3,13 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"/>
     <title>Document</title>
 </head>
 <body>
-    <nav class="nav_bar">
-    </nav>
+    <div class="test">
+    <div class="header">
+        <div class="logo container">Logo</div>
+        <nav class="nav_bar container">
+            <ul class="nav__menu">
+                <li>Home</li>
+                <li>Orders</li>
+                <li>Items</li>
+            </ul>
+        </nav>
+    </div>
+    
 
-    <div class="content__wrapper">
+    <div class="content__wrapper container">
         {% block content %}
             
         {% endblock content %}
@@ -17,8 +30,6 @@
 
     <div class="footer">
     </div>
-
-
-
+    </div>
 </body>
 </html>
