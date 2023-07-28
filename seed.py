@@ -19,6 +19,7 @@ def seed():
     order2 = Order(customer_name="Nick",customer_phone=9809878987,customer_address="Princess Street",order_delivered=False)
     order3 = Order(customer_name="Bill",customer_phone=3241234123,customer_address="Princess Street North",order_delivered=False)
 
+    
 
     db.session.add(item1)
     db.session.add(item2)
