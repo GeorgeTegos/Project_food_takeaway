@@ -1,30 +1,24 @@
 {% extends 'base.jinja' %}
 {% block content %}
-    <div class="orders__wrapper">
-        <div class="orders__header">
-            Header
-        </div>
+    <div class="show__wrapper">
+        <div class="show__left">
+            <div class="show__id">
+                <span>Order No: <span class="show__id__ID">{{ order.id }}</span></span>
+            </div>
 
-        <div class="orders__main">
-            <ul>
-            {% for order in orders  %}
-                <li class="li__for">
-                    <ul class="ul__for">
-                        <li class="line__text"><span>Order No:</span> {{ order.id }}</li>
-                        <li class="line__text"><span>Customer:</span> {{ order.customer_name }}</li>
-                        <li class="line__text"><span>Status:</span>
-                        {% if order.order_delivered == False  %}
-                            &#x2716;
-                        {% else %}
-                            &#x2714;
-                        {% endif %}
-                        </li>
-                        {# <li class="line__text"><span>Phone:</span> {{ order.customer_phone }}</li>
-                        <li class="line__text"><span>Address:</span>  {{ order.customer_address }}</li> #}
-                    </ul>
-                </li>
-            {% endfor %}
-            </ul>
+            <div class="show__infos">
+                <ul>
+                    <li>Customer Name  {{ order.customer_name }}</li>
+                    <li>Phone {{ phone }}</li>
+                    <li>Address{{ order.customer_address }}</li>
+                </ul>
+                {# <span class="info_total"> {{ order.customer_name }}</span> #}
+            </div>
+        </div>
+        
+
+        <div class="show__right">
+            This is right
         </div>
     </div>
 {% endblock content %}

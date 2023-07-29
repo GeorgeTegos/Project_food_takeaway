@@ -1,0 +1,40 @@
+.show__wrapper{
+    width: 100%;
+    display: flex;
+    border: 1px black solid;
+}
+
+.show__left{
+    background-color:antiquewhite;
+    width: 20%;
+}
+
+.show__left .show__id{
+    border: 1px solid red;
+    height: 15%;
+    margin: 10px 10px 20px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.show__id__ID{
+    font-weight: bolder;
+    font-size:larger;
+}
+
+.show__left .show__infos {
+    border: 1px black solid;
+    height: 75%;
+    margin: 0px 10px 10px 10px ;
+}
+.show__left .show__infos ul{
+    border: 1px solid red;
+    display: flex;
+    flex-flow: wrap column;
+    justify-content: center;
+    align-items: center;
+    gap:50px;
+    font-size: 130%;
+    padding-top:40%;
+}
