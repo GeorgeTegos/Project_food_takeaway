@@ -1,4 +1,5 @@
 from app import db
+import unittest
 
 class Item(db.Model):
 
@@ -6,4 +7,3 @@ class Item(db.Model):
     item_name = db.Column(db.String(64))
     item_price = db.Column(db.Integer)
     order_item = db.relationship("Order_Item", backref="item")
-    # orders=db.relationship('Order', secondary="Order_Item")

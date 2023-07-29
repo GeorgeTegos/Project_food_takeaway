@@ -42,16 +42,69 @@
 /* Content Area ############################-- CONTENT AREA */
 .content__wrapper{
     margin-top: -10px;
-    /* border: 1px black solid; */
     min-height: 80vh;
     width: 92.5%;
-    display: flex;  
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-    border-top-right-radius: 0;
+    border: 1px black solid;
+    margin-top: 10px;
 }
 
+.orders__wrapper{
+    background-color: aqua;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.orders__header{
+    border: 2px solid black;
+    width: 80%;
+    height: 4rem;
+    border-bottom-left-radius: 18%;
+    border-bottom-right-radius: 18%;
+}
+
+.orders__main{
+    background-color: beige;
+    width: 68%;
+    height: 100%;
+}
+
+.orders__main ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding-left: 2rem;
+    gap:3%;
+    
+}
+
+.orders__main ul li.li__for {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    border: 1px black solid;
+    margin-block: 10px;
+}
+
+.ul__for{
+    display: flex;
+    flex-flow: column;
+    align-self: center;
+    
+}
+
+.ul__for li{
+    padding: 3px 0px;
+}
+
+.line__text {
+    display: flex;
+    gap:40px;
+    justify-content: space-between;
+    width: 100%;
+}
 
 /* Footer Area #############################-- FOOTER AREA */
 .footer{
