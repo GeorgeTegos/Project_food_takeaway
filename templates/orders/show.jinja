@@ -8,10 +8,11 @@
             
             <div class="show__infos">
                 <ul>
-                    <li>Customer Name  {{ order.customer_name }}</li>
-                    <li>Phone {{ phone }}</li>
-                    <li>Address{{ order.customer_address }}</li>
-                    <li>Total £{{total }}</li>
+                    <li class="text_test"><span>Customer Name</span> <span>{{ order.customer_name }}</span></li>
+                    <li class="text_test"><span>Phone</span> <span>{{ phone }}</span></li>
+                    <li class="text_test"><span>Address</span> <span>{{ order.customer_address }}</span></li>
+                    <li class="text_test"><span>Total</span> <span>£{{total }}</span></li>
+                    <li><a href="/orders/{{order.id}}/edit">Edit</a></li>
                 </ul>
                 {# <span class="info_total"> {{ order.customer_name }}</span> #}
             </div>
