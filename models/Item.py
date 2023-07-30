@@ -7,3 +7,6 @@ class Item(db.Model):
     item_name = db.Column(db.String(64))
     item_price = db.Column(db.Integer)
     order_item = db.relationship("Order_Item", backref="item")
+
+    def __repr__(self):
+        return f'<Item "{self.item_name}">' 

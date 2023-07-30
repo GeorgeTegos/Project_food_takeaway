@@ -5,12 +5,13 @@
             <div class="show__id">
                 <span>Order No: <span class="show__id__ID">{{ order.id }}</span></span>
             </div>
-
+            
             <div class="show__infos">
                 <ul>
                     <li>Customer Name  {{ order.customer_name }}</li>
-                    <li>Phone {{ phone }}</li>
+                    <li>Phone {{ order.customer_phone }}</li>
                     <li>Address{{ order.customer_address }}</li>
+                    <li>Total £{{total }}</li>
                 </ul>
                 {# <span class="info_total"> {{ order.customer_name }}</span> #}
             </div>
@@ -18,7 +19,13 @@
         
 
         <div class="show__right">
-            This is right
+        <ul>
+            {% for item in items  %}
+                 <li> 
+                    {{ item.item_name }}
+                </li>   
+            {% endfor %}
+        </ul>
         </div>
     </div>
 {% endblock content %}
