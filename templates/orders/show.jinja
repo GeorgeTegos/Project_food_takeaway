@@ -9,7 +9,7 @@
             <div class="show__infos">
                 <ul>
                     <li>Customer Name  {{ order.customer_name }}</li>
-                    <li>Phone {{ order.customer_phone }}</li>
+                    <li>Phone {{ phone }}</li>
                     <li>Address{{ order.customer_address }}</li>
                     <li>Total £{{total }}</li>
                 </ul>
@@ -22,7 +22,7 @@
         <ul>
             {% for item in items  %}
                  <li> 
-                    {{ item.item_name }}
+                    {{ item.item_name }},  £{{ item.item_price }}
                 </li>   
             {% endfor %}
         </ul>

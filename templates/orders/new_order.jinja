@@ -1,0 +1,29 @@
+{% extends 'base.jinja' %}
+{% block content %}
+    <form action="/orders" method="post">
+    
+    <label for="customer_name">Customer Name:</label>
+    <input type="text" name="customer_name" id="customer_name" required>
+
+    <label for="customer_phone">Phone:</label>
+    <input type="text" id="customer_phone" name="customer_phone" 
+        pattern="[0-9]{10}" title="Requires 10 numbers" required/>
+   
+    <label for="customer_address">Address</label>
+    <input type="text" name="customer_address" id="customer_address" required>
+
+    <ul>
+        {% for item in items  %}
+            <li><input type="checkbox" name="item_name" id="item_name" > 
+            {{ item.item_name }}</li>
+        {% endfor %}
+    </ul>
+
+    <button type="submit">Send Order</button>
+    
+    </form>
+
+
+    <br>
+
+{% endblock content %}
