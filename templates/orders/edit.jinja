@@ -11,13 +11,10 @@
         <label for="customer_address">Address</label>
         <input type="text" name="customer_address" id="customer_address" value="{{order.customer_address}}">
 
-        {% for item in items  %}
-            <label for="{{item.id}}">{{item.id}}, {{item.item_name}}</label>
-            <input type="checkbox" name="test" id="test">
-        {% endfor %}
-        
-        </select>
-
+        <br>
+        <label for="delivered">Order Delivered</label>
+        <input type="checkbox" name="delivered" id="delivered" >
+        <br>
         <button type="submit">Edit Order</button>
         
         </form>

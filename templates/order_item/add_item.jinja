@@ -1,0 +1,17 @@
+{% extends 'base.jinja' %}
+{% block content %}
+    
+    <form action="/order/{{order.id}}/items" method="POST">
+    
+    <ul>
+    {% for item in items  %}
+    <li>
+        <label for="{{item.item_name}}">{{ item.item_name }} Quantity</label> <br>
+        <input type="number" name="{{item.id}}" id="{{item.item_name}}" value="0" >
+    </li>
+    {% endfor %}
+    </ul>
+    <button type="submit">Send</button>
+    </form>
+
+{% endblock content %}

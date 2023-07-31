@@ -11,13 +11,7 @@
    
     <label for="customer_address">Address</label>
     <input type="text" name="customer_address" id="customer_address" required>
-
-    <select name="item" id="item" multiple>
-        {% for item in items  %}
-            <option value="{{item.id}}">{{ item.item_name }}</option>
-        {% endfor %}
     
-    </select>
 
     <button type="submit">Send Order</button>
     
