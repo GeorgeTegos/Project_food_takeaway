@@ -3,6 +3,7 @@
     <div class="orders__wrapper">
         <div class="orders__header">
             <form action="/order/find", method="post">
+                <label for="search">Search Order Number</label>
                 <input type="text" name="search" id="search">
                 <button type="submit">Send</button>
             </form>
@@ -22,9 +23,11 @@
                             &#x2714;
                         {% endif %}
                         </li>
-                        <li><a href="/order/{{ order.id }}">Check order</a></li>
-                        <li><a href="/order/{{order.id}}/add_items">Add</a></li>
-                        <li><a href="/order/{{order.id}}/delete">Delete</a></li>
+                        <li class="order__buttons">
+                        <a href="/order/{{ order.id }}">Check order</a>
+                        <a href="/order/{{order.id}}/add_items">Add</a></li>
+                        <li class="order__button__delete">
+                        <a href="/order/{{order.id}}/delete">Delete</a></li>
 
                     </ul>
                 </li>

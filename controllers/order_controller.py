@@ -19,8 +19,13 @@ def search_order_by_id():
     print(type(search))
     order = Order.query.get(int(search))
     phone = int(order.customer_phone)
-    total = find_total(order.order_item) 
-    return render_template('orders/show.jinja',order=order,total = total,phone=phone)
+    # total = find_total(order.order_item)
+    ordered_items = {}
+    total = 0
+    for item in order.order_item:
+        ordered_items[item.item.item_name] = item.quantity      
+        total += (item.item.item_price  * item.quantity) 
+    return render_template('orders/show.jinja',order=order,total = total,phone=phone, ordered_items=ordered_items)
 
 
 @order_blueprint.route('/order/<id>/delete')
@@ -34,7 +39,7 @@ def delete_order(id):
 @order_blueprint.route('/order/<id>')
 def show_by_id(id):
     order = Order.query.get(id)
-    total = find_total(order.order_item)
+    # total = find_total(order.order_item)
     ordered_items = {}
     total = 0
     for item in order.order_item:

@@ -6,17 +6,20 @@
     <link rel="stylesheet"  href="{{ url_for('static', filename='style.css') }}"/>
     <link rel="stylesheet" href="{{ url_for('static', filename='orders/orders.css') }}"/>
     <link rel="stylesheet" href="{{ url_for('static', filename='orders/show.css') }}"/>
-    <title>Document</title>
+    <title>Order App</title>
 </head>
 <body>
     <div class="test">
     <div class="header">
-        <div class="logo container">Logo</div>
+        <div class="logo container">
+        <img src="/static/images/logo.png" alt="Error" class="logo__img">
+        </div>
+
         <nav class="nav_bar container">
             <ul class="nav__menu">
                 <li><a href="/">Home</a></li>
                 <li><a href="/orders">Orders</a></li>
-                <li><a href="/items">Items</a></li>
+                <li><a href="/items">Menu</a></li>
                 <li><a href="/orders/new">New Order</a></li>
             </ul>
         </nav>

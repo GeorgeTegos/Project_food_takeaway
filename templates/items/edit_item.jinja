@@ -1,0 +1,18 @@
+{% extends 'base.jinja' %}
+{% block content %}
+    <Div>
+        <form action="/item/{{item.id}}" method="post">
+            <label for="item_name">Item Name:</label>
+            <input type="text" name="item_name" id="item_name" value="{{item.item_name}}">
+
+            <label for="item_price">Price:</label>
+            <input type="text" id="item_price" name="item_price" 
+                pattern="[0-9]{1,3}" title="Maximum is 999" value="{{item.item_price}}"/>
+
+            <button type="submit">Update Item</button>
+        </form>
+
+    </Div>
+        <a href="/item/{{item.id}}/delete">Delete Item</a>
+
+{% endblock content %}

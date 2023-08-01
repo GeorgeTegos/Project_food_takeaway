@@ -1,0 +1,10 @@
+{% extends 'base.jinja' %}
+{% block content %}
+    <ul>
+            <li>
+            {{ item.item_name }} , {{ item.item_price }}
+            </li>
+    </ul>
+
+    <a href="/item/{{item.id}}/edit">Edit item</a>
+{% endblock content %}
