@@ -21,11 +21,11 @@
 
         <div class="show__right">
         <ul>
-            {# {% for k,v in ordered_items  %}
-                 <li> 
-                    {{ k }}
-                </li>   
-            {% endfor %} #}
+            {% for k,v in ordered_items.items()  %}
+              <li>  
+              Item: {{ k }} <br>quantity :{{ v }}
+              </li>
+            {% endfor %}
         </ul>
         </div>
     </div>

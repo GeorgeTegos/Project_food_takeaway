@@ -12,22 +12,34 @@ def show_all_orders():
     orders = Order.query.all()
     return render_template('orders/orders.jinja',orders=orders)
 
-@order_blueprint.route('/orders/<id>')
+
+@order_blueprint.route('/order/find', methods=["post"])
+def search_order_by_id():
+    search = request.form['search']
+    print(type(search))
+    order = Order.query.get(int(search))
+    phone = int(order.customer_phone)
+    total = find_total(order.order_item) 
+    return render_template('orders/show.jinja',order=order,total = total,phone=phone)
+
+
+@order_blueprint.route('/order/<id>/delete')
+def delete_order(id):
+    order = Order.query.get(id)
+    db.session.delete(order)
+    db.session.commit()
+    return redirect('/')
+
+
+@order_blueprint.route('/order/<id>')
 def show_by_id(id):
     order = Order.query.get(id)
+    total = find_total(order.order_item)
     ordered_items = {}
     total = 0
     for item in order.order_item:
         ordered_items[item.item.item_name] = item.quantity      
-        total += (item.item.item_price  * item.quantity) 
-                
-        print(order.customer_name)
-        print(item.item.item_price)
-        print(item.item.item_name)
-        print(item.quantity)
-    print(total)
-    
-    print(ordered_items)
+        total += (item.item.item_price  * item.quantity)
     phone= int(order.customer_phone)
 
     return render_template('orders/show.jinja',order=order,total=total,phone=phone,ordered_items=ordered_items)
@@ -76,3 +88,13 @@ def confirm_edit(id):
 
     db.session.commit()
     return redirect('/orders')
+
+####################
+
+def find_total(dictionary):
+    ordered_items = {}
+    total = 0
+    for item in dictionary:
+        ordered_items[item.item.item_name] = item.quantity      
+        total += (item.item.item_price  * item.quantity) 
+    return total

@@ -8,10 +8,6 @@ from models.Order_item  import Order_Item
 
 order_item_blueprint=Blueprint("order_item",__name__)
 
-@order_item_blueprint.route('/ttest')
-def test():
-    order_list=Order_Item.query.all()
-    return render_template('test.jinja',order_list=order_list)
 
 @order_item_blueprint.route('/order/<id>/items', methods=['POST'])
 def add_items_to_last_order(id):
