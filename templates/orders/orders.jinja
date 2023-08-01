@@ -4,8 +4,8 @@
         <div class="orders__header">
             <form action="/order/find", method="post">
                 <label for="search">Search Order Number</label>
-                <input type="text" name="search" id="search">
-                <button type="submit">Send</button>
+                <input type="number" name="search" id="search">
+                <button type="submit">&#128269</button>
             </form>
         </div>
 
@@ -16,7 +16,7 @@
                     <ul class="ul__for">
                         <li class="line__text"><span>Order No:</span> {{ order.id }}</li>
                         <li class="line__text"><span>Customer:</span> {{ order.customer_name }}</li>
-                        <li class="line__text"><span>Status:</span>
+                        <li class="line__text"><span>Delivered:</span>
                         {% if order.order_delivered == False  %}
                             &#x2716;
                         {% else %}

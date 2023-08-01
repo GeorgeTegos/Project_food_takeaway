@@ -4,6 +4,17 @@
         <div class="show__left">
             <div class="show__id">
                 <span>Order No: <span class="show__id__ID">{{ order.id }}</span></span>
+                <div>
+                   {% if order.order_delivered != True %}
+                        <form action="/orders/{{order.id}}/button" method="post">
+                            <label for="delivered"></label>
+                            <input type="checkbox" name="delivered" id="delivered" style="display: none;" checked>
+                            <button type="submit" class="status_click">Deliver</button>
+                        </form>
+                    {% else %}
+                    <h3>Order Sended</h3>
+                    {% endif %}
+                </div>
             </div>
             
             <div class="show__infos">
@@ -12,13 +23,7 @@
                     <li class="text_test"><span>Phone</span> <span>{{ phone }}</span></li>
                     <li class="text_test"><span>Address</span> <span>{{ order.customer_address }}</span></li>
                     <li class="text_test"><span>Total</span> <span>£{{total }}</span></li>
-                    <li>
-                        <form action="/orders/{{order.id}}/button" method="post">
-                            <label for="delivered">Update Order</label>
-                            <input type="checkbox" name="delivered" id="delivered" style="display: none;" checked>
-                            <button type="submit">Status</button>
-                         </form>
-                    </li>
+
                             
                        
                     <li><a href="/orders/{{order.id}}/edit">Edit</a></li>

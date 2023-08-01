@@ -17,8 +17,11 @@ def show_all_orders():
 @order_blueprint.route('/order/find', methods=["post"])
 def search_order_by_id():
     search = request.form['search']
-    print(type(search))
+    if len(search) == 0:
+        return redirect('/orders')
     order = Order.query.get(int(search))
+    if order ==  None:
+        return redirect('/orders')
     phone = int(order.customer_phone)
     # total = find_total(order.order_item)
     ordered_items = {}
