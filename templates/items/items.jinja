@@ -1,17 +1,28 @@
 {% extends 'base.jinja' %}
 {% block content %}
     <div class="items__wrapper">
-        <h3>
-            
-                <a href="/items/add">Add Item</a>
-            
-        </h3>    
+        <div class="items__header">
+            <span>
+                <h3><a class="add_item" href="/items/add">Add Item</a></h3> 
+            </span>   
+        </div>
 
-        <ul>
-            {% for item in items %}
-                <li><a href="/item/{{item.id}}">{{ item.item_name }}</a>, {{ item.item_price }}</li>
-            {% endfor %}
-        </ul>
+        <div class="items__main">
+            <ul>
+                {% for item in items %}
+                    <li class="one__item">
+                        <ul class="ul__one_item">
+                            <li class="line__text ">
+                                <a class="items__buttons" href="/item/{{item.id}}">
+                                {{ item.item_name }}</a> 
+                                <span>£{{ item.item_price }}</span>
+                            </li>
+  
+                        </ul>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
 
 {% endblock content %}

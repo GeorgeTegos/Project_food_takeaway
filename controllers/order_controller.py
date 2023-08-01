@@ -9,7 +9,8 @@ order_blueprint=Blueprint("order",__name__)
 
 @order_blueprint.route('/orders')
 def show_all_orders():
-    orders = Order.query.all()
+    from sqlalchemy import desc
+    orders = Order.query.order_by(desc(Order.id)).all()
     return render_template('orders/orders.jinja',orders=orders)
 
 
@@ -89,8 +90,18 @@ def confirm_edit(id):
     except KeyError:
         delivered=False
     order.order_delivered=delivered
+    db.session.commit()
+    return redirect('/orders')
 
-
+@order_blueprint.route('/orders/<id>/button', methods=['post'])
+def update_status_button(id):
+    order = Order.query.get(id)
+    try:
+        request.form["delivered"]
+        delivered=True
+    except KeyError:
+        delivered=False
+    order.order_delivered=delivered
     db.session.commit()
     return redirect('/orders')
 

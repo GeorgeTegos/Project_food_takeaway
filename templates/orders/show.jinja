@@ -12,6 +12,15 @@
                     <li class="text_test"><span>Phone</span> <span>{{ phone }}</span></li>
                     <li class="text_test"><span>Address</span> <span>{{ order.customer_address }}</span></li>
                     <li class="text_test"><span>Total</span> <span>£{{total }}</span></li>
+                    <li>
+                        <form action="/orders/{{order.id}}/button" method="post">
+                            <label for="delivered">Update Order</label>
+                            <input type="checkbox" name="delivered" id="delivered" style="display: none;" checked>
+                            <button type="submit">Status</button>
+                         </form>
+                    </li>
+                            
+                       
                     <li><a href="/orders/{{order.id}}/edit">Edit</a></li>
                 </ul>
                 {# <span class="info_total"> {{ order.customer_name }}</span> #}
@@ -21,10 +30,13 @@
 
         <div class="show__right">
         <ul>
-            {% for k,v in ordered_items.items()  %}
-              <li>  
-              Item: {{ k }} <br>quantity :{{ v }}
-              </li>
+            {% if ordered_items != None %}
+                
+                {% endif %}
+                {% for k,v in ordered_items.items()  %}
+                <li>  
+                Item: {{ k }} <br>quantity :{{ v }}
+                </li>
             {% endfor %}
         </ul>
         </div>

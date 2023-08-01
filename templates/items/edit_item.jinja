@@ -11,8 +11,8 @@
 
             <button type="submit">Update Item</button>
         </form>
+        <a href="/item/{{item.id}}/delete" onclick="return confirm('Confirm your delete:\n{{item.item_name}}')">Delete Item</a>
 
     </Div>
-        <a href="/item/{{item.id}}/delete">Delete Item</a>
 
 {% endblock content %}

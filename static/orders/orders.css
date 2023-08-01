@@ -48,10 +48,18 @@
     display: flex;
     gap:5px
 }
-.order__buttons,a{
+.order__buttons a{
     color: lightgreen;
     padding: 2px 4px;
 }
+.order__button__delete a{
+    color: red;
+    padding: 2px 5px 0px 5px;
+    border-radius: 10%;
+    font-size: large;
+    /* background-color: #414040; */
+}
+
 .order__buttons a:hover{
     background-color: black;
     border-radius: 10%;
