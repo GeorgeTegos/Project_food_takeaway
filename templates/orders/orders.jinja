@@ -25,7 +25,10 @@
                         </li>
                         <li class="order__buttons">
                         <a href="/order/{{ order.id }}">Check order</a>
-                        <a href="/order/{{order.id}}/add_items">Add</a></li>
+                        {% if order.order_delivered != True %}
+                        <a href="/order/{{order.id}}/add_items">Add</a>
+                        {% endif %}
+                        </li>
                         <li class="order__button__delete">
                         <a href="/order/{{order.id}}/delete" 
                             onclick="return confirm('Confirm Your Delete:\nOrder {{order.id}}')">

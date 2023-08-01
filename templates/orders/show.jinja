@@ -26,24 +26,28 @@
 
                             
                        
-                    <li><a href="/orders/{{order.id}}/edit">Edit</a></li>
+                    <li class="edit__button"><a class="edit__button" href="/orders/{{order.id}}/edit">Edit</a></li>
                 </ul>
-                {# <span class="info_total"> {{ order.customer_name }}</span> #}
             </div>
         </div>
         
 
         <div class="show__right">
-        <ul>
-            {% if ordered_items != None %}
-                
-                {% endif %}
-                {% for k,v in ordered_items.items()  %}
-                <li>  
-                Item: {{ k }} <br>quantity :{{ v }}
-                </li>
-            {% endfor %}
-        </ul>
-        </div>
+            <div class="show__right__header">
+
+            </div>
+            <div class="show__right__main">
+                <ul class="show__right__list">
+                    {% if ordered_items != None %}
+                        
+                        {% endif %}
+                        {% for k,v in ordered_items.items()  %}
+                        <li class="show__ul__item">  
+                        Item: {{ k }} <br>quantity :{{ v }} {# TO DO ADD DELETE ITEM FROM ORDER#}
+                        </li>
+                    {% endfor %}
+                </ul>
+                </div>
+            </div>
     </div>
 {% endblock content %}

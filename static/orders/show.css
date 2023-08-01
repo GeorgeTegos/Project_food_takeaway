@@ -1,12 +1,18 @@
 .show__wrapper{
     width: 100%;
     display: flex;
-    border: 1px black solid;
+    /* border: 1px black solid; */
+    margin-bottom: 5px;
+    margin-left: 5px;
+    justify-content: space-evenly;
+    gap: 10px;
 }
 
 .show__left{
-    background-color:antiquewhite;
+    background-color:#0D2622;
+    color: white;
     width: 20%;
+    border-radius: 10%;
 }
 
 .show__left .show__id{
@@ -49,6 +55,50 @@
     flex-flow: column nowrap;
 }
 
+.show__right{
+    background-color: 1A4C44;
+    width:70%;
+    display: flex;
+    flex-flow: column;
+}
+
+.show__right__header{
+    background-color: #0D2622;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 4rem;
+    border-bottom-left-radius: 18%;
+    border-bottom-right-radius: 18%;
+}
+
+.show__right__main{
+    margin: 0 30px;
+    border-radius: 5%;
+    padding: 5px 10px ;
+    background-color: antiquewhite;
+    height: 100%;
+}
+
+.show__right__list{
+    /* border: 1px solid black; */
+    display: flex;
+    flex-wrap: wrap;
+    gap:10px;
+}
+
+
+.show__ul__item{
+    border: 1px solid black;
+    gap: 5px;
+    width: 30%;
+}
+
+
+/* Buttons Links */
+
 .status_click{
     background: none;
 	color: inherit;
@@ -81,3 +131,24 @@
   box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
   transform: scale(1.05) rotate(-1deg);
 }
+
+.edit__button{
+    align-self:center;
+
+}
+
+.edit__button a:link{
+    color: yellow;
+
+}
+
+.edit__button a:visited{
+    color: yellow;
+}
+
+.edit__button a:hover{
+    background-color: #1A4C44 ;
+    padding: 5px 20px 5px 20px;
+    border-radius: 10%;
+    font-size: larger;
+} 
