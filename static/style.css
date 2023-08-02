@@ -84,4 +84,49 @@ button, input[type="submit"], input[type="reset"] {
     border-top-left-radius: 5%;
     border-top-right-radius: 5%;
     height: 3rem;
+    align-items: center;
+    color: white;
+    display: flex;
+    justify-content: center;    
+}
+
+/* user guide */
+
+.user_guide_ul{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.user_guide_li{
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.fix_image{
+    width: 500px; height:300px;
+}
+
+.contact{
+    width: 100%;
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.mail:link{
+    text-decoration: none;
+    color: yellow;
+    font-size: larger;
+}
+
+.mail:visited{
+    text-decoration: none;
+    color: yellow;
 }

@@ -39,3 +39,12 @@ def remove_item_from_order(id):
     for item in order.order_item:
         print(item.item.item_name,item.quantity)
     return redirect('/order/<id>/remove')
+
+
+@order_item_blueprint.route('/user_guide')
+def user_guide():
+    return render_template('/user_guide.jinja')
+
+@order_item_blueprint.route('/report')
+def contact():
+    return render_template('report.jinja')
