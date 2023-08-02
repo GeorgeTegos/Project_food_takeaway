@@ -61,7 +61,8 @@
 }
 
 .order__buttons a:hover{
-    background-color: black;
+    background-color: lightgreen;
+    color: black;
     border-radius: 10%;
 }
 

@@ -28,7 +28,11 @@ def search_order_by_id():
     for item in order.order_item:
         ordered_items[item.item.item_name] = item.quantity      
         total += (item.item.item_price  * item.quantity) 
-    return render_template('orders/show.jinja',order=order,total = total,phone=phone, ordered_items=ordered_items)
+    return render_template('orders/show.jinja',
+                           order=order,
+                           total = total,
+                           phone=phone,
+                           ordered_items=ordered_items)
 
 
 @order_blueprint.route('/order/<id>/delete')
@@ -48,7 +52,11 @@ def show_by_id(id):
         ordered_items[item.item.item_name] = item.quantity      
         total += (item.item.item_price  * item.quantity)
     phone= int(order.customer_phone)
-    return render_template('orders/show.jinja',order=order,total=total,phone=phone,ordered_items=ordered_items)
+    return render_template('orders/show.jinja',
+                           order=order,
+                           total=total,
+                           phone=phone,
+                           ordered_items=ordered_items)
 
 @order_blueprint.route('/order/<id>/edit_quantity')
 def edit_item_quantity(id):
@@ -60,7 +68,10 @@ def edit_item_quantity(id):
         total += (item.item.item_price  * item.quantity)
     phone= int(order.customer_phone)
     return render_template('orders/edit_quantity.jinja',
-                           order=order,total=total,phone=phone,ordered_items=ordered_items)
+                           order=order,
+                           total=total,
+                           phone=phone,
+                           ordered_items=ordered_items)
 
 
 @order_blueprint.route('/orders/new')
@@ -100,9 +111,9 @@ def confirm_edit(id):
     order.customer_address = address
     try:
         request.form["delivered"]
-        delivered=True
-    except KeyError:
         delivered=False
+    except KeyError:
+        delivered=True
     order.order_delivered=delivered
     db.session.commit()
     return redirect('/orders')
@@ -113,7 +124,6 @@ def confirm_edit(id):
 def confirm_new_quantity(id):
     order=Order.query.get(id)
     ordered_items = request.form.items()
-
     for k,v in ordered_items:
         if v != '0':
             item = Item.query.filter_by(item_name=k).first()

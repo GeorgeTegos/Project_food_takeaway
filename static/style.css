@@ -3,8 +3,7 @@
     margin: 0;
     list-style: none;
     text-decoration-line: none;
-    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
-}
+    font-family: "Gill Sans", sans-serif;}
 
 button, input[type="submit"], input[type="reset"] {
 	background: none;
@@ -16,10 +15,9 @@ button, input[type="submit"], input[type="reset"] {
 	outline: inherit;
 }
 
-.test{
+.background__image{
     background-color: white;
-    background-image:url('/static/images/p_sides.png');
-
+    background-image:url('/static/images/p_sides.png');    
 }
 
 .container {
@@ -37,6 +35,7 @@ button, input[type="submit"], input[type="reset"] {
     border-bottom-left-radius: 5%;
     border-bottom-right-radius: 5%;
     display: flex;
+    gap: 300px;
 }
 .nav__menu a{
     color:  white;

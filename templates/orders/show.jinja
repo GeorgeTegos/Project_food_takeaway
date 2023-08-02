@@ -22,7 +22,7 @@
                     <li class="text_test"><span>Customer Name</span> <span>{{ order.customer_name }}</span></li>
                     <li class="text_test"><span>Phone</span> <span>{{ phone }}</span></li>
                     <li class="text_test"><span>Address</span> <span>{{ order.customer_address }}</span></li>
-                    <li class="text_test"><span>Total</span> <span>£{{total }}</span></li>
+                    <li class="text_test"><span>Total</span> <span>£ <b>{{total }}</b></span></li>
                     </ul>
             </div>
         </div>
@@ -42,7 +42,7 @@
                         {% endif %}
                         {% for k,v in ordered_items.items()  %}
                         <li class="show__ul__item">  
-                        <span>Item: {{ k }}</span>
+                        <span><b>{{ k }}</b></span>
                         <span>Quantity: {{ v }} </span>
 
                         </li>

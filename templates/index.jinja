@@ -1,5 +1,25 @@
 {% extends 'base.jinja' %}
 {% block content %}
-    <h1>This is index
-    </h1>
+<div class="index__wrapper">
+    <div class="index__head">
+        <h1 class="index__title">
+            <span>Welcome to the</span> 
+            <span style="color: red;">BEST</span><span>worst Food App</span>
+        </h1>
+        <img src="/static/images/main_image_thumbnail.png" alt="main image" style="height: 45%;">
+
+    </div>
+
+    <div class="index__main index__head">
+        <h3 class="index__title" style="font-style: italic;">
+            <span>A simple Web application</span>
+            for your take-away orders and more !</h3>
+        <div class="link">
+            <a href="">Go to User Guide</a>
+        </div>
+    </div>
+
+        {# <div class="index__bottom">
+    </div> #}
+</div>
 {% endblock content %}Test

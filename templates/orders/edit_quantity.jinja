@@ -34,7 +34,7 @@
                     {% for k,v in ordered_items.items()  %}
                     <li class="add_items_li">
                         <label class="add_items_li_label" for="{{k}}">
-                            <span>{{ k }}</span> 
+                            <span style="font-size:large;"> <b>{{ k }}</b></span> 
                             <span>Quantity</span></label> 
                         <input type="number" min="0" max="99" name="{{k}}" id="{{k}}" value="{{v}}" >
                     </li>

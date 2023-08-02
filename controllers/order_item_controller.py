@@ -10,7 +10,7 @@ order_item_blueprint=Blueprint("order_item",__name__)
 
 
 @order_item_blueprint.route('/order/<id>/items', methods=['POST'])
-def add_items_to_last_order(id):
+def add_items_to_order(id):
     
     order = Order.query.get(id)
 

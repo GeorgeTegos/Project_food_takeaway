@@ -18,8 +18,13 @@
                 <input type="text" name="customer_address" id="customer_address" value="{{order.customer_address}}">
 
                 <div class="delivered_box">
-                    <label for="delivered">Order Delivered</label>
+                    <label for="delivered">Revert Order Status</label>
+                    {% if order.order_delivered == True %}
+                    <input type="checkbox" name="delivered" id="delivered" checked>
+                     {% else %}
                     <input type="checkbox" name="delivered" id="delivered" >
+                    {% endif %}
+
 
                 </div>
                 

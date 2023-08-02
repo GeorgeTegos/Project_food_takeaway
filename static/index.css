@@ -1,0 +1,58 @@
+.index__wrapper{
+    margin-top: -20px;
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+}
+
+.index__head{
+    background-color: #666060;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    max-height: 45vh;
+}
+
+.index__main{
+    min-height: 38vh;
+    background-color: #858282;
+    justify-content: space-around;
+}
+
+.index__bottom{
+        background-color: #ada7a7;
+    /* background-color: #C0BABA; */
+    min-height: 17.6vh;
+}
+
+.index__title{
+    display: flex;
+    flex-flow: column;
+    color: white;
+}
+
+.link a:link{
+    text-decoration: none;
+    font-size: x-large;
+    background-color:gold;
+    border-radius: 10%;
+    padding: 5px 0 5px 0;
+    color: black;
+}
+
+.link a:visited{
+
+    color: black;
+    background-color:gold;
+    padding: 5px 0 5px 0;
+
+}
+
+.link a:hover{
+    border-radius: 10%;
+    color: gold;
+    background-color:black;
+    padding: 10px 0 10px 0;
+}
+
+
