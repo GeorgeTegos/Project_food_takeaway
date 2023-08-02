@@ -12,7 +12,7 @@
                             <button type="submit" class="status_click">Deliver</button>
                         </form>
                     {% else %}
-                    <h3>Order Sended</h3>
+                    <h3>Order Sent</h3>
                     {% endif %}
                 </div>
             </div>
@@ -23,18 +23,17 @@
                     <li class="text_test"><span>Phone</span> <span>{{ phone }}</span></li>
                     <li class="text_test"><span>Address</span> <span>{{ order.customer_address }}</span></li>
                     <li class="text_test"><span>Total</span> <span>£{{total }}</span></li>
-
-                            
-                       
-                    <li class="edit__button"><a class="edit__button" href="/orders/{{order.id}}/edit">Edit</a></li>
-                </ul>
+                    </ul>
             </div>
         </div>
         
 
         <div class="show__right">
             <div class="show__right__header">
-
+                <ul style="display: flex; gap:30px;">
+                    <li class="edit__button"><a class="edit__button" href="/orders/{{order.id}}/edit">Edit Customer</a></li>
+                    <li class="edit__button"><a class="edit__button" href="/order/{{order.id}}/edit_quantity">Edit Quantity</a></li>
+                </ul>
             </div>
             <div class="show__right__main">
                 <ul class="show__right__list">
@@ -43,7 +42,9 @@
                         {% endif %}
                         {% for k,v in ordered_items.items()  %}
                         <li class="show__ul__item">  
-                        Item: {{ k }} <br>quantity :{{ v }} {# TO DO ADD DELETE ITEM FROM ORDER#}
+                        <span>Item: {{ k }}</span>
+                        <span>Quantity: {{ v }} </span>
+
                         </li>
                     {% endfor %}
                 </ul>

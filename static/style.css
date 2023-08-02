@@ -4,7 +4,16 @@
     list-style: none;
     text-decoration-line: none;
     font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+}
 
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
 }
 
 .test{

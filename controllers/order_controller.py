@@ -23,7 +23,6 @@ def search_order_by_id():
     if order ==  None:
         return redirect('/orders')
     phone = int(order.customer_phone)
-    # total = find_total(order.order_item)
     ordered_items = {}
     total = 0
     for item in order.order_item:
@@ -37,21 +36,32 @@ def delete_order(id):
     order = Order.query.get(id)
     db.session.delete(order)
     db.session.commit()
-    return redirect('/')
+    return redirect('/orders')
 
 
 @order_blueprint.route('/order/<id>')
 def show_by_id(id):
     order = Order.query.get(id)
-    # total = find_total(order.order_item)
     ordered_items = {}
     total = 0
     for item in order.order_item:
         ordered_items[item.item.item_name] = item.quantity      
         total += (item.item.item_price  * item.quantity)
     phone= int(order.customer_phone)
-
     return render_template('orders/show.jinja',order=order,total=total,phone=phone,ordered_items=ordered_items)
+
+@order_blueprint.route('/order/<id>/edit_quantity')
+def edit_item_quantity(id):
+    order = Order.query.get(id)
+    ordered_items = {}
+    total = 0
+    for item in order.order_item:
+        ordered_items[item.item.item_name] = item.quantity      
+        total += (item.item.item_price  * item.quantity)
+    phone= int(order.customer_phone)
+    return render_template('orders/edit_quantity.jinja',
+                           order=order,total=total,phone=phone,ordered_items=ordered_items)
+
 
 @order_blueprint.route('/orders/new')
 def make_new_order_form():
@@ -71,10 +81,11 @@ def make_new_order():
 @order_blueprint.route('/orders/<id>/edit')
 def edit_order(id):
     order = Order.query.get(id)
-    items = Item.query.join(Order_Item).filter(Order_Item.order_id == id)
     phone= int(order.customer_phone)
+    for item in order.order_item:
+        print(item.item_id)
     
-    return render_template('orders/edit.jinja',order=order,items=items,phone=phone)
+    return render_template('orders/edit.jinja',order=order,phone=phone,items=order.order_item)
 
 @order_blueprint.route("/orders/<id>" , methods=["post"])
 def confirm_edit(id):
@@ -96,6 +107,27 @@ def confirm_edit(id):
     db.session.commit()
     return redirect('/orders')
 
+
+
+@order_blueprint.route('/order/<id>/new_quantity', methods=['post'])
+def confirm_new_quantity(id):
+    order=Order.query.get(id)
+    ordered_items = request.form.items()
+
+    for k,v in ordered_items:
+        if v != '0':
+            item = Item.query.filter_by(item_name=k).first()
+            order_item = Order_Item.query.filter_by(item_id=item.id, order_id=order.id).first()
+            order_item.quantity = v
+        elif v == '0':
+            item = Item.query.filter_by(item_name=k).first()
+            order_item = Order_Item.query.filter_by(item_id=item.id, order_id=order.id).first()
+            db.session.delete(order_item)
+
+    db.session.commit()
+    return redirect('/orders')
+
+
 @order_blueprint.route('/orders/<id>/button', methods=['post'])
 def update_status_button(id):
     order = Order.query.get(id)
@@ -110,10 +142,3 @@ def update_status_button(id):
 
 ####################
 
-def find_total(dictionary):
-    ordered_items = {}
-    total = 0
-    for item in dictionary:
-        ordered_items[item.item.item_name] = item.quantity      
-        total += (item.item.item_price  * item.quantity) 
-    return total

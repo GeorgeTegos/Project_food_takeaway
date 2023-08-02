@@ -27,5 +27,15 @@ def add_items_to_last_order(id):
 def get_items_form(id):
     order = Order.query.get(id)
     items = Item.query.all()
+    phone = int(order.customer_phone)
 
-    return render_template('/order_item/add_item.jinja',items=items,order=order)
+    return render_template('/order_item/add_item.jinja',items=items,order=order,phone=phone)
+
+
+#TO DO
+@order_item_blueprint.route('/order/<id>/remove_item')
+def remove_item_from_order(id):
+    order = Order.query.get(id)
+    for item in order.order_item:
+        print(item.item.item_name,item.quantity)
+    return redirect('/order/<id>/remove')

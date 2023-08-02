@@ -58,4 +58,4 @@ def delete_item(id):
     item = Item.query.get(id)
     db.session.delete(item)
     db.session.commit()
-    return redirect('/')
+    return redirect('/items')

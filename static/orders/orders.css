@@ -91,7 +91,14 @@
 
 .line__text {
     display: flex;
-    gap:40px;
+
+    justify-content: space-between;
+    width: 100%;
+}
+
+.line__text__menu {
+    display: flex;
+    gap: 30px;
     justify-content: space-between;
     width: 100%;
 }

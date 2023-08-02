@@ -23,20 +23,20 @@
 
     <div class="show__right">
         <div class="show__right__header">
-            <h4>Add items to the order</h4>              
+            <h4>Editing Items Quantity for order: {{ order.id }}</h4>              
 
         </div>
         <div class="show__right__main ">
-            <form action="/order/{{order.id}}/items" method="POST" class="test_form">
-                <button class="add_item_button save_button" type="submit" onclick="return confirm('Confirm New Items!')">Add To Order</button>
+            <form action="/order/{{order.id}}/new_quantity" method="POST" class="test_form">
+                <button class="add_item_button save_button" type="submit" onclick="return confirm('Confirm New Quantity!')">Update Order</button>
 
                 <ul class="add_items_ul">
-                    {% for item in items  %}
+                    {% for k,v in ordered_items.items()  %}
                     <li class="add_items_li">
-                        <label class="add_items_li_label"for="{{item.item_name}}">
-                            <span>{{ item.item_name }}</span> 
+                        <label class="add_items_li_label" for="{{k}}">
+                            <span>{{ k }}</span> 
                             <span>Quantity</span></label> 
-                        <input type="number" min="0" max="99" name="{{item.id}}" id="{{item.item_name}}" value="0" >
+                        <input type="number" min="0" max="99" name="{{k}}" id="{{k}}" value="{{v}}" >
                     </li>
                     {% endfor %}
                 </ul>

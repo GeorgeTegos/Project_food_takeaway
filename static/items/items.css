@@ -75,3 +75,16 @@
     flex-flow: column;
     align-self: center;
 }
+
+
+.edit_item_delete_button:link{
+    background-color: blue;
+    padding: 5px 10px;
+    border-radius: 10%;
+    color:white;
+}
+
+.edit_item_delete_button:hover{
+    background-color: red;
+    font-size: larger;
+}

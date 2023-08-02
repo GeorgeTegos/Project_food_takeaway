@@ -1,0 +1,35 @@
+.add_items_li{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    width: 20%;
+    /* border: 1px solid black; */
+}
+
+.add_items_li input{
+    width: 30px;
+}
+
+.add_items_ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap:20px;
+}
+
+.add_items_li_label{
+    display: flex;
+    flex-direction: column;
+}
+
+.add_item_button{
+    width:fit-content;
+    align-self: center;
+}
+
+.test_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
