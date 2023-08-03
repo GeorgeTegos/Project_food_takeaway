@@ -35,13 +35,12 @@
     text-decoration: none;
     font-size: x-large;
     background-color:gold;
-    border-radius: 10%;
-    padding: 5px 0 5px 0;
+    border-radius: 50%;
+    padding: 10px 20px 10px 20px;
     color: black;
 }
 
 .link a:visited{
-
     color: black;
     background-color:gold;
     padding: 5px 0 5px 0;
@@ -49,10 +48,8 @@
 }
 
 .link a:hover{
-    border-radius: 10%;
     color: gold;
     background-color:black;
-    padding: 10px 0 10px 0;
 }
 
 

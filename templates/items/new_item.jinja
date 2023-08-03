@@ -10,7 +10,7 @@
         <form action="/items" method="post">
             
             <label for="item_name">Item Name:</label>
-            <input type="text" name="item_name" id="item_name" required>
+            <input type="text" pattern="[a-zA-Z\s]{0,40}$" name="item_name" id="item_name" required>
 
             <label for="item_price">Price:</label>
             <input type="number" 

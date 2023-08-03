@@ -34,7 +34,7 @@
                     {% for item in items  %}
                     <li class="add_items_li">
                         <label class="add_items_li_label"for="{{item.item_name}}">
-                            <span>{{ item.item_name }}</span> 
+                            <span><b>{{ item.item_name }}</b></span> 
                             <span>Quantity</span></label> 
                         <input type="number" min="0" max="99" name="{{item.id}}" id="{{item.item_name}}" value="0" >
                     </li>

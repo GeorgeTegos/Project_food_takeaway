@@ -8,7 +8,7 @@
         <div class="edit__form">
             <form action="/orders/{{order.id}}" method="post">
                 <label for="customer_name">Customer Name:</label>
-                <input type="text" name="customer_name" id="customer_name" value="{{order.customer_name}}">
+                <input type="text" name="customer_name" pattern="[a-zA-Z\s]{0,40}$" id="customer_name" value="{{order.customer_name}}">
 
                 <label for="customer_phone">Phone:</label>
                 <input type="text" id="customer_phone" name="customer_phone" 
