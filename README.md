@@ -18,6 +18,6 @@ into the folder use those commands in that order:
   flask db migrate
   flask db upgrade
 
-4) use this command to run flask: flask run
+4) Use this command to run flask: flask run
 
 5) Flask enviroment runs at port 4999 so you can go to web app homepage by typing this URL: http://localhost:4999/
