@@ -5,14 +5,15 @@ Duration of the project was 1 week.
 You can see a 3minutes showcase by download food_take_away_showcase file.
 
 If you want to use this web app. 
-1)You need Flask - SQLalchemy
 
-2)You have to change from app.py this line :
+1) You need Flask - SQLalchemy
+
+2) You have to change from app.py this line :
 app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://user@localhost:5432/food_takeaway_project"
 by replacing:
 user@localhost:5432    to  YOUR_USER_NAME@localhost:5432
 
-3)use this command to create local database (MAC):createdb food_takeaway_project 
+3) Use this command to create local database (MAC):createdb food_takeaway_project 
 into the folder use those commands in that order:
   flask db init
   flask db migrate
