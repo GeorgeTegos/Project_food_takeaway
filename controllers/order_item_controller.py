@@ -16,7 +16,7 @@ def add_items_to_order(id):
 
     for k,v in request.form.items():
         if v != '0':
-            item_in_order = Order_Item(order_id=order.id,item_id=k,quantity=int(v))
+            item_in_order = Order_Item(order_id=order.id,item_id=k,quantity=v)
             db.session.add(item_in_order)
 
     db.session.commit()
