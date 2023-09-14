@@ -15,9 +15,9 @@ user@localhost:5432    to  YOUR_USER_NAME@localhost:5432
 
 3) Use this command to create local database (MAC):createdb food_takeaway_project 
 into the folder use those commands in that order:
-  flask db init
-  flask db migrate
-  flask db upgrade
+  3.a) flask db init
+  3.b) flask db migrate
+  3.c) flask db upgrade
 
 4) Use this command to run flask: flask run
 
